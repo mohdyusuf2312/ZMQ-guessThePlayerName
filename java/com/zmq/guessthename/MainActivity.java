@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.util.ArraySet;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -81,6 +82,45 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public CountDownTimer guessTimer;
+    public TextView timer;
+
+    public void setGuessTimer(Bitmap full, String chosenPlayer, ArraySet openGrid) {
+        if (guessTimer != null){
+            guessTimer.cancel();
+        }
+        guessTimer = new CountDownTimer(20000, 1000) {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onTick(long millisUntilFinished) {
+                timer.setText("Time: " + (millisUntilFinished/1000) + "s");
+            }
+
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onFinish() {
+                Random random = new Random();
+                if (openGrid.size() < 9){
+                    int randomIndex;
+                    do {
+                        randomIndex = random.nextInt(9);
+                    }while (openGrid.contains(randomIndex));
+                    openGrid.add(randomIndex);
+                    ImageViews[randomIndex].setVisibility(ImageView.VISIBLE);
+                }
+                lives--;
+                if (lives <= 0){
+                    showGameOverDialog(full, chosenPlayer, "red");
+                } else {
+                    Toast.makeText(MainActivity.this, "You ran out of time! Lost 1 life.", Toast.LENGTH_SHORT).show();
+                    TextView live = findViewById(R.id.lives);
+                    live.setText("Lives: " + "❤️".repeat(lives));
+                    setGuessTimer(full, chosenPlayer, openGrid);
+                }
+            }
+        }.start();
+    }
+
     @SuppressLint("SetTextI18n")
     public void playGame(){
 
@@ -128,6 +168,7 @@ public class MainActivity extends AppCompatActivity {
 //        Track opened grid indexes
         ArraySet <Integer> openGrid = new ArraySet<>();
 
+
 //        Visible two random unique grid initially
         Random random = new Random();
         while (openGrid.size() < 2){
@@ -139,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         ArrayList<Character> guessLetters = new ArrayList<>();
-
+        setGuessTimer(full, chosenPlayer, openGrid);
         Button btn = findViewById(R.id.btnSubmit);
         btn.setOnClickListener(fn -> {
 
@@ -210,6 +251,7 @@ public class MainActivity extends AppCompatActivity {
 //                Update UI
                 playerTextView.setText(hiddenWord);
             }
+            setGuessTimer(full, chosenPlayer, openGrid);
             editText.setText("");
         });
     }
@@ -231,6 +273,8 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        timer = findViewById(R.id.timer);
 
         EditText editText = findViewById(R.id.guessChar);
         Button btnSubmit = findViewById(R.id.btnSubmit);
