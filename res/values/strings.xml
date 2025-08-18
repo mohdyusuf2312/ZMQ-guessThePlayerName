@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">guessTheName</string>
+    <string name="heading">Guess The Player Name</string>
+    <string name="btnSubmit">Submit Letter</string>
+    <string name="DescriptionPlayerImage">Player Image</string>
+    <string name="DescriptionImg_0">Grid 1 Player Image</string>
+    <string name="DescriptionImg_1">Grid 2 Player Image</string>
+    <string name="DescriptionImg_2">Grid 3 Player Image</string>
+    <string name="DescriptionImg_3">Grid 4 Player Image</string>
+    <string name="DescriptionImg_4">Grid 5 Player Image</string>
+    <string name="DescriptionImg_5">Grid 6 Player Image</string>
+    <string name="DescriptionImg_6">Grid 7 Player Image</string>
+    <string name="DescriptionImg_7">Grid 8 Player Image</string>
+    <string name="DescriptionImg_8">Grid 9 Player Image</string>
+    <string name="guessChar">Guess a Letter</string>
+    <string name="playAgain">Do you want to play again?</string>
+    <string name="yes">Yes</string>
+    <string name="quit">Quit</string>
+</resources>

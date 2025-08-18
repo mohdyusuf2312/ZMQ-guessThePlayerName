@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dialog"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:layout_gravity="center"
+    android:padding="20dp"
+    android:orientation="vertical"
+    android:background="@drawable/rounded_border">
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="36sp"
+        android:layout_gravity="center_horizontal">
+    </TextView>
+
+    <ImageView
+        android:id="@+id/overImage"
+        android:layout_width="180dp"
+        android:layout_height="140dp"
+        android:layout_gravity="center_horizontal">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/overName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="14sp">
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/playAgain"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:layout_gravity="center_horizontal">
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/btnPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yes"
+            android:textColor="@color/green"
+            android:layout_margin="20dp"
+            android:backgroundTint="@color/btn"
+            tools:ignore="ButtonStyle">
+        </Button>
+
+        <Button
+            android:id="@+id/btnQuit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/quit"
+            android:textColor="@color/red"
+            android:layout_margin="20dp"
+            android:backgroundTint="@color/btn"
+            tools:ignore="ButtonStyle">
+        </Button>
+
+    </LinearLayout>
+
+</LinearLayout>
