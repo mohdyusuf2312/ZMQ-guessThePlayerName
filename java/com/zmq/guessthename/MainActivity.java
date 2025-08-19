@@ -29,6 +29,8 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
+    public boolean isPlayerWon = false;
+
     @SuppressLint("SetTextI18n")
     private void showGameOverDialog(Bitmap full, String chosenPlayer, String color) {
         Dialog dialog = new Dialog(this);
@@ -51,11 +53,11 @@ public class MainActivity extends AppCompatActivity {
 
         if (color.equals("green")) {
             TextView resultText = dialog.findViewById(R.id.result);
-            resultText.setText("You won.");
+            resultText.setText("You won!");
             resultText.setTextColor(Color.parseColor("#4CAF50"));
         } else if (color.equals("red")) {
             TextView resultText = dialog.findViewById(R.id.result);
-            resultText.setText("You Lose.");
+            resultText.setText("You Lose!");
             resultText.setTextColor(Color.parseColor("#FA2D1E"));
         }
 
@@ -63,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         overImage.setImageBitmap(full);
 
         TextView overName = dialog.findViewById(R.id.overName);
-        overName.setText("The player was " + chosenPlayer);
+        overName.setText("The player was: " + chosenPlayer);
 
         Button btnPlay = dialog.findViewById(R.id.btnPlay);
         Button btnQuit = dialog.findViewById(R.id.btnQuit);
@@ -93,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
             @SuppressLint("SetTextI18n")
             @Override
             public void onTick(long millisUntilFinished) {
-                timer.setText("Time: " + (millisUntilFinished/1000) + "s");
+                timer.setText("Time left: " + (millisUntilFinished/1000) + "s");
             }
 
             @SuppressLint("SetTextI18n")
@@ -109,13 +111,15 @@ public class MainActivity extends AppCompatActivity {
                     ImageViews[randomIndex].setVisibility(ImageView.VISIBLE);
                 }
                 lives--;
-                if (lives <= 0){
+                if (lives <= 0 && !isPlayerWon){
                     showGameOverDialog(full, chosenPlayer, "red");
                 } else {
-                    Toast.makeText(MainActivity.this, "You ran out of time! Lost 1 life.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Time’s up! You lost 1 life.", Toast.LENGTH_SHORT).show();
                     TextView live = findViewById(R.id.lives);
                     live.setText("Lives: " + "❤️".repeat(lives));
-                    setGuessTimer(full, chosenPlayer, openGrid);
+                    if (!isPlayerWon){
+                        setGuessTimer(full, chosenPlayer, openGrid);
+                    }
                 }
             }
         }.start();
@@ -180,7 +184,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         ArrayList<Character> guessLetters = new ArrayList<>();
-        setGuessTimer(full, chosenPlayer, openGrid);
+        if (!isPlayerWon){
+            setGuessTimer(full, chosenPlayer, openGrid);
+        }
         Button btn = findViewById(R.id.btnSubmit);
         btn.setOnClickListener(fn -> {
 
@@ -189,10 +195,10 @@ public class MainActivity extends AppCompatActivity {
             String guessInput = (editText.getText().toString()).toUpperCase();
 
             if(guessInput.isEmpty()){
-                Toast.makeText(this, "Please enter a Character.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Please enter a letter.", Toast.LENGTH_SHORT).show();
                 return;
             } else if (guessInput.matches("[0-9]")) {
-                Toast.makeText(this, "Numbers are not acceptable.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Numbers are not allowed.", Toast.LENGTH_SHORT).show();
                 return;
             } else {
                 boolean foundInGuessLetters = false;
@@ -200,7 +206,7 @@ public class MainActivity extends AppCompatActivity {
                 for (char c: guessLetters){
                     if (c == guessChar){
                         foundInGuessLetters = true;
-                        Toast.makeText(this, "Already guessed", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "You already guessed that letter.", Toast.LENGTH_SHORT).show();
                         break;
                     }
                 }
@@ -226,8 +232,8 @@ public class MainActivity extends AppCompatActivity {
                             ImageViews[randomIndex].setVisibility(ImageView.VISIBLE);
                         }
                         lives--;
-                        if (lives > 0) {
-                            Toast.makeText(this, "You guessed '" + guessChar + "'. That is not in the word. You lose a life.", Toast.LENGTH_SHORT).show();
+                        if (lives > 0 && !isPlayerWon) {
+                            Toast.makeText(this, "'" + guessChar + "' is not in the name. You lost 1 life.", Toast.LENGTH_SHORT).show();
                             live.setText("Lives: " + "❤️".repeat(lives));
                         } else {
                             live.setText("Lives: " + "❤️".repeat(0));
@@ -246,12 +252,16 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 if (!foundBlank) {
+                    isPlayerWon = true;
+                    guessTimer.cancel();
                     showGameOverDialog(full, chosenPlayer, "green");
                 }
 //                Update UI
                 playerTextView.setText(hiddenWord);
             }
-            setGuessTimer(full, chosenPlayer, openGrid);
+            if (!isPlayerWon){
+                setGuessTimer(full, chosenPlayer, openGrid);
+            }
             editText.setText("");
         });
     }
