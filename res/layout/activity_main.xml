@@ -19,7 +19,8 @@
             android:text="@string/heading"
             android:textSize="28sp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="20dp">
+            android:layout_marginBottom="20dp"
+            android:contentDescription="@string/heading">
         </TextView>
 
         <LinearLayout
@@ -35,7 +36,8 @@
                 android:layout_weight="1"
                 android:textSize="14sp"
                 android:layout_marginLeft="50dp"
-                tools:ignore="RtlHardcoded">
+                tools:ignore="RtlHardcoded"
+                android:contentDescription="@string/timer">
             </TextView>
 
             <TextView
@@ -46,7 +48,8 @@
                 android:gravity="end"
                 android:textSize="14sp"
                 android:layout_marginRight="50dp"
-                tools:ignore="RtlHardcoded">
+                tools:ignore="RtlHardcoded"
+                android:contentDescription="@string/lives">
             </TextView>
 
         </LinearLayout>
@@ -160,7 +163,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:textSize="20sp"
-            android:letterSpacing="0.2">
+            android:letterSpacing="0.2"
+            android:contentDescription="@string/chosenPlayer">
         </TextView>
 
         <EditText
@@ -174,7 +178,9 @@
             android:importantForAutofill="no"
             android:inputType="textCapCharacters"
             android:maxLength="1"
-            android:gravity="center">
+            android:gravity="center"
+            android:contentDescription="@string/enterLetter"
+            tools:ignore="contentDescription">
         </EditText>
 
         <Button
@@ -182,7 +188,8 @@
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
-            android:text="@string/btnSubmit">
+            android:text="@string/btnSubmit"
+            android:contentDescription="@string/btnSubmit">
         </Button>
 
     </LinearLayout>
