@@ -1,0 +1,1264 @@
+{
+    "players": [
+      {
+        "name": "Virat Kohli",
+        "imagePath": "kohli.jpg",
+        "hints": [
+          "Fastest to 13,000 ODI runs",
+          "Former India captain across formats",
+          "Known for consistent chases",
+          "Nicknamed 'Chase Master'"
+        ]
+      },
+      {
+        "name": "Sachin Tendulkar",
+        "imagePath": "sachin.jpg",
+        "hints": [
+          "Called the 'God of Cricket'",
+          "100 international centuries",
+          "First to 200 in ODIs",
+          "Nicknamed 'Little Master'"
+        ]
+      },
+      {
+        "name": "MS Dhoni",
+        "imagePath": "dhoni.jpg",
+        "hints": [
+          "Led India to 2007 T20 and 2011 World Cup wins",
+          "Finisher with 'Helicopter shot'",
+          "Former wicketkeeper-captain",
+          "Nicknamed 'Captain Cool'"
+        ]
+      },
+      {
+        "name": "Rohit Sharma",
+        "imagePath": "rohit.jpg",
+        "hints": [
+          "Holds record 264 in ODIs",
+          "Known as 'Hitman'",
+          "Multiple double centuries in ODIs",
+          "Current Indian captain (2025)"
+        ]
+      },
+      {
+        "name": "Jasprit Bumrah",
+        "imagePath": "bumrah.jpg",
+        "hints": [
+          "Exceptional death-over bowler",
+          "Unusual slingy action",
+          "Nicknamed 'Boom'",
+          "Led India to Test wins in England & Australia"
+        ]
+      },
+      {
+        "name": "Yuvraj Singh",
+        "imagePath": "yuvraj.jpg",
+        "hints": [
+          "Hit 6 sixes in an over (2007 T20 WC)",
+          "2011 World Cup Player of the Tournament",
+          "Left-hand power hitter",
+          "Nicknamed 'Yuvi'"
+        ]
+      },
+      {
+        "name": "Kapil Dev",
+        "imagePath": "kapil.jpg",
+        "hints": [
+          "Led India to 1983 World Cup victory",
+          "All-rounder with big hitting",
+          "Nicknamed 'Haryana Hurricane'",
+          "Famous 175* vs Zimbabwe"
+        ]
+      },
+      {
+        "name": "Anil Kumble",
+        "imagePath": "kumble.jpg",
+        "hints": [
+          "Took all 10 wickets in a Test innings",
+          "India's highest wicket-taker",
+          "Nicknamed 'Jumbo'",
+          "Former India coach"
+        ]
+      },
+      {
+        "name": "Sourav Ganguly",
+        "imagePath": "ganguly.jpg",
+        "hints": [
+          "Known as 'Dada'",
+          "Left-handed opener",
+          "Transformed Indian team aggression",
+          "Later BCCI President"
+        ]
+      },
+      {
+        "name": "Rahul Dravid",
+        "imagePath": "dravid.jpg",
+        "hints": [
+          "Nicknamed 'The Wall'",
+          "Known for solid defence",
+          "Over 10,000 runs in Tests & ODIs",
+          "India’s head coach (2021-24)"
+        ]
+      },
+      {
+        "name": "Sunil Gavaskar",
+        "imagePath": "gavaskar.jpg",
+        "hints": [
+          "First to 10,000 Test runs",
+          "34 Test hundreds (long-time record)",
+          "Opened against fearsome West Indies pace",
+          "Nicknamed 'Sunny'"
+        ]
+      },
+      {
+        "name": "Virender Sehwag",
+        "imagePath": "sehwag.jpg",
+        "hints": [
+          "Two Test triple-centuries",
+          "Explosive opener across formats",
+          "Fastest 300 by balls faced in Tests (319)",
+          "Nickname 'Viru'"
+        ]
+      },
+      {
+        "name": "Zaheer Khan",
+        "imagePath": "zaheer.jpg",
+        "hints": [
+          "Left-arm pace spearhead for India",
+          "2011 World Cup joint-highest wicket-taker",
+          "Master of reverse swing",
+          "Played 92 Tests, 200+ ODI wickets"
+        ]
+      },
+      {
+        "name": "Harbhajan Singh",
+        "imagePath": "harbhajan.jpg",
+        "hints": [
+          "First Indian to take Test hat-trick",
+          "800+ international wickets across formats",
+          "Key in 2001 Australia series",
+          "Nicknamed 'Bhajji'"
+        ]
+      },
+      {
+        "name": "Ravichandran Ashwin",
+        "imagePath": "ashwin.jpg",
+        "hints": [
+          "India's leading off-spinner of modern era",
+          "400+ Test wickets",
+          "Carrom ball specialist",
+          "Multiple ICC rankings No.1 (Tests)"
+        ]
+      },
+      {
+        "name": "Ravindra Jadeja",
+        "imagePath": "jadeja.jpg",
+        "hints": [
+          "All-rounder with deadly accuracy",
+          "Sword celebration after fifties",
+          "Top ICC Test all-rounder rankings multiple times",
+          "Brilliant left-arm spin and fielding"
+        ]
+      },
+      {
+        "name": "Mohammed Shami",
+        "imagePath": "shami.jpg",
+        "hints": [
+          "Seam-position maestro",
+          "2019 & 2023 World Cups standout",
+          "Hat-trick in 2019 ODI World Cup",
+          "Over 200 Test wickets"
+        ]
+      },
+      {
+        "name": "Bhuvneshwar Kumar",
+        "imagePath": "bhuvi.jpg",
+        "hints": [
+          "Swing bowler both ways",
+          "Five-wicket hauls on Test debut series",
+          "Purple Cap winner in IPL",
+          "Useful lower-order batting"
+        ]
+      },
+      {
+        "name": "KL Rahul",
+        "imagePath": "klrahul.jpg",
+        "hints": [
+          "Hundreds in all three international formats",
+          "Opener-keeper middle-order flexibility",
+          "Debut Test hundred in Australia",
+          "IPL captaincy experience"
+        ]
+      },
+      {
+        "name": "Shikhar Dhawan",
+        "imagePath": "dhawan.jpg",
+        "hints": [
+          "Fastest century on Test debut for India",
+          "ICC Champions Trophy 2013 Golden Bat",
+          "Left-handed opener with big scores",
+          "Nicknamed 'Gabbar'"
+        ]
+      },
+      {
+        "name": "Suresh Raina",
+        "imagePath": "raina.jpg",
+        "hints": [
+          "First Indian to score T20I hundred",
+          "Key middle-order in 2011 WC win",
+          "Agile fielder and part-time off-spin",
+          "Long-time CSK stalwart"
+        ]
+      },
+      {
+        "name": "Ajinkya Rahane",
+        "imagePath": "rahane.jpg",
+        "hints": [
+          "Led India to 2020-21 Border-Gavaskar win",
+          "Overseas Test specialist",
+          "Calm middle-order presence",
+          "Hundreds at Lord's and MCG"
+        ]
+      },
+      {
+        "name": "Cheteshwar Pujara",
+        "imagePath": "pujara.jpg",
+        "hints": [
+          "Test match specialist for India",
+          "Known for patience and long innings",
+          "Backbone in away series wins",
+          "Multiple double hundreds in FC cricket"
+        ]
+      },
+      {
+        "name": "Ishant Sharma",
+        "imagePath": "ishant.jpg",
+        "hints": [
+          "Tall right-arm pacer",
+          "200+ Test wickets",
+          "Memorable spell to Ponting (Perth 2008)",
+          "Longevity across eras"
+        ]
+      },
+      {
+        "name": "Mohammed Siraj",
+        "imagePath": "siraj.jpg",
+        "hints": [
+          "Led India attack at Lord's 2021 win",
+          "Asia Cup 2023 final 6/21",
+          "Hit-the-deck swing bowler",
+          "Rapid rise in ODI rankings"
+        ]
+      },
+      {
+        "name": "Rishabh Pant",
+        "imagePath": "pant.jpg",
+        "hints": [
+          "Counter-attacking wicketkeeper-batter",
+          "Gabba 2021 heroics",
+          "Hundreds in England & Australia Tests",
+          "Fearless strokeplay"
+        ]
+      },
+      {
+        "name": "Hardik Pandya",
+        "imagePath": "hardik.jpg",
+        "hints": [
+          "Fast-bowling all-rounder",
+          "Led Gujarat to IPL title (2022)",
+          "Clean striker at death",
+          "India T20I leadership stints"
+        ]
+      },
+      {
+        "name": "Suryakumar Yadav",
+        "imagePath": "suryakumar.jpg",
+        "hints": [
+          "T20I No.1 batter multiple stretches",
+          "360-degree strokeplay",
+          "Rapid T20I hundreds",
+          "Finisher for India in T20s"
+        ]
+      },
+      {
+        "name": "Shubman Gill",
+        "imagePath": "gill.jpg",
+        "hints": [
+          "Young top-order prodigy",
+          "Double hundred in ODIs",
+          "Key role in 2023 ODI run glut",
+          "Elegant timing and drives"
+        ]
+      },
+      {
+        "name": "Prithvi Shaw",
+        "imagePath": "shaw.jpg",
+        "hints": [
+          "Century on Test debut (Rajkot 2018)",
+          "U19 World Cup-winning captain (2018)",
+          "Aggressive opener",
+          "Domestic run machine"
+        ]
+      },
+      {
+        "name": "Sanju Samson",
+        "imagePath": "samson.jpg",
+        "hints": [
+          "Wicketkeeper-batter with clean hitting",
+          "IPL captain for Rajasthan",
+          "Debut for India at 19",
+          "Known for lofted inside-out drives"
+        ]
+      },
+      {
+        "name": "Mithali Raj",
+        "imagePath": "mithali.jpg",
+        "hints": [
+          "All-time leading women's ODI run-scorer",
+          "Indian women's cricket icon",
+          "Led India to 2005 & 2017 WC finals",
+          "Debut ODI hundred at 16"
+        ]
+      },
+      {
+        "name": "Jhulan Goswami",
+        "imagePath": "jhulan.jpg",
+        "hints": [
+          "Former leading wicket-taker in women's ODIs",
+          "Tall right-arm fast bowler",
+          "Played 200+ internationals",
+          "Arjuna & Padma Shri awardee"
+        ]
+      },
+      {
+        "name": "Smriti Mandhana",
+        "imagePath": "smriti.jpg",
+        "hints": [
+          "Elegant left-handed opener",
+          "ICC Women's Cricketer of the Year (2018, 2021)",
+          "Centuries in Eng & Aus",
+          "WPL star"
+        ]
+      },
+      {
+        "name": "Harmanpreet Kaur",
+        "imagePath": "harmanpreet.jpg",
+        "hints": [
+          "171* vs Australia (2017 WC semi)",
+          "India women's T20I captain",
+          "Explosive middle-order batter",
+          "All-round contributions"
+        ]
+      },
+      {
+        "name": "Ricky Ponting",
+        "imagePath": "ponting.jpg",
+        "hints": [
+          "Led Australia to 2003 & 2007 WC titles",
+          "13,000+ Test runs",
+          "Prolific No.3 batter",
+          "Brilliant slip fielder"
+        ]
+      },
+      {
+        "name": "Steve Smith",
+        "imagePath": "smith.jpg",
+        "hints": [
+          "Modern Test batting great",
+          "Unique technique, high average",
+          "Multiple Ashes Player of the Series",
+          "Former Australia captain"
+        ]
+      },
+      {
+        "name": "Michael Clarke",
+        "imagePath": "clarke.jpg",
+        "hints": [
+          "Led Australia to 2015 World Cup win",
+          "Triple-century in Tests (329*)",
+          "Elegant middle-order batter",
+          "Nicknamed 'Pup'"
+        ]
+      },
+      {
+        "name": "Adam Gilchrist",
+        "imagePath": "gilchrist.jpg",
+        "hints": [
+          "Revolutionary wicketkeeper-batter",
+          "Walked after faint edge (sportsmanship)",
+          "Three-time World Cup winner",
+          "Brutal opener in ODIs"
+        ]
+      },
+      {
+        "name": "Shane Warne",
+        "imagePath": "warne.jpg",
+        "hints": [
+          "708 Test wickets (leg-spin legend)",
+          "Ball of the Century (1993)",
+          "Multiple Ashes triumphs",
+          "Charismatic on-field presence"
+        ]
+      },
+      {
+        "name": "Glenn McGrath",
+        "imagePath": "mcgrath.jpg",
+        "hints": [
+          "563 Test wickets with metronomic accuracy",
+          "World Cup champion (1999, 2003, 2007)",
+          "Best ODI WC bowler by wickets",
+          "Hit-the-deck line-and-length"
+        ]
+      },
+      {
+        "name": "Brett Lee",
+        "imagePath": "lee.jpg",
+        "hints": [
+          "Express pace over 150 kph",
+          "310+ Test wickets",
+          "380+ ODI wickets",
+          "Sharpshooter at death"
+        ]
+      },
+      {
+        "name": "Muttiah Muralitharan",
+        "imagePath": "muralitharan.jpg",
+        "hints": [
+          "800 Test wickets (record)",
+          "534 ODI wickets",
+          "Unique off-spin action",
+          "Sri Lanka's bowling icon"
+        ]
+      },
+      {
+        "name": "Kumar Sangakkara",
+        "imagePath": "sangakkara.jpg",
+        "hints": [
+          "14,000+ ODI runs",
+          "Graceful left-handed wicketkeeper-batter",
+          "2014 T20 World Cup winner",
+          "MCC President post-retirement"
+        ]
+      },
+      {
+        "name": "Mahela Jayawardene",
+        "imagePath": "mahela.jpg",
+        "hints": [
+          "374 Test partnership (world record) with Sangakkara",
+          "Classy Sri Lankan captain",
+          "2014 T20 World Cup winner",
+          "Prolific in subcontinent"
+        ]
+      },
+      {
+        "name": "Lasith Malinga",
+        "imagePath": "malinga.jpg",
+        "hints": [
+          "Slingy action yorker specialist",
+          "Four wickets in four balls (ODI)",
+          "T20 World Cup 2014 winner",
+          "IPL death-bowling great"
+        ]
+      },
+      {
+        "name": "Chris Gayle",
+        "imagePath": "gayle.jpg",
+        "hints": [
+          "Universe Boss of T20",
+          "Two T20I hundreds",
+          "Fastest IPL hundred (30 balls)",
+          "300 in Tests for West Indies"
+        ]
+      },
+      {
+        "name": "Brian Lara",
+        "imagePath": "lara.jpg",
+        "hints": [
+          "400* highest Test score",
+          "375 & 501* first-class records",
+          "Elegant left-hander",
+          "Multiple world records in 1990s-2000s"
+        ]
+      },
+      {
+        "name": "Curtly Ambrose",
+        "imagePath": "ambrose.jpg",
+        "hints": [
+          "Tall West Indies fast bowler",
+          "405 Test wickets",
+          "Famous 7/25 vs Australia (1993)",
+          "Relentless bounce and accuracy"
+        ]
+      },
+      {
+        "name": "Courtney Walsh",
+        "imagePath": "walsh.jpg",
+        "hints": [
+          "First to 500 Test wickets",
+          "New-ball partner to Ambrose",
+          "889 international wickets",
+          "West Indies great of 80s-90s"
+        ]
+      },
+      {
+        "name": "Jacques Kallis",
+        "imagePath": "kallis.jpg",
+        "hints": [
+          "One of the greatest all-rounders",
+          "13k Test runs & 292 wickets",
+          "11k ODI runs & 273 wickets",
+          "Consistency across formats"
+        ]
+      },
+      {
+        "name": "AB de Villiers",
+        "imagePath": "abdevilliers.jpg",
+        "hints": [
+          "Mr. 360 innovative batting",
+          "Fastest ODI 50, 100, 150 (at times)",
+          "Wicketkeeper-batter for SA",
+          "IPL legend with RCB"
+        ]
+      },
+      {
+        "name": "Dale Steyn",
+        "imagePath": "steyn.jpg",
+        "hints": [
+          "Steyn Gun express pace",
+          "439 Test wickets",
+          "Swing at high speed",
+          "No.1 Test bowler for long periods"
+        ]
+      },
+      {
+        "name": "Hashim Amla",
+        "imagePath": "amla.jpg",
+        "hints": [
+          "Fastest to 2000–7000 ODI runs (then-records)",
+          "Triple-century in Tests (311*)",
+          "Elegant anchor for SA",
+          "Bearded batting maestro"
+        ]
+      },
+      {
+        "name": "Graeme Smith",
+        "imagePath": "graemesmith.jpg",
+        "hints": [
+          "Youngest SA Test captain",
+          "Led SA to No.1 Test ranking",
+          "Twin 200s in 2003 vs England",
+          "Gritty left-handed opener"
+        ]
+      },
+      {
+        "name": "Kane Williamson",
+        "imagePath": "williamson.jpg",
+        "hints": [
+          "NZ's modern batting great",
+          "Led NZ to WTC 2019-21 title",
+          "Calm demeanor and technique",
+          "Prolific across formats"
+        ]
+      },
+      {
+        "name": "Ross Taylor",
+        "imagePath": "taylor.jpg",
+        "hints": [
+          "Most runs for NZ in internationals",
+          "Double hundreds in Tests",
+          "Powerful middle-order presence",
+          "Distinct backlift"
+        ]
+      },
+      {
+        "name": "Brendon McCullum",
+        "imagePath": "mccullum.jpg",
+        "hints": [
+          "Fastest Test hundred (54 balls)",
+          "Transformed NZ's aggressive style",
+          "First-ever IPL century",
+          "Bazball coach for England"
+        ]
+      },
+      {
+        "name": "Martin Guptill",
+        "imagePath": "guptill.jpg",
+        "hints": [
+          "237* highest individual in World Cup",
+          "Aggressive ODI opener",
+          "Top NZ white-ball run-scorer",
+          "Clean striker over long-on"
+        ]
+      },
+      {
+        "name": "Joe Root",
+        "imagePath": "root.jpg",
+        "hints": [
+          "England's modern Test great",
+          "10,000+ Test runs",
+          "Part of Fab Four",
+          "Handy off-spin"
+        ]
+      },
+      {
+        "name": "Ben Stokes",
+        "imagePath": "stokes.jpg",
+        "hints": [
+          "2019 Headingley Test miracle",
+          "2019 World Cup hero",
+          "Aggressive all-rounder, England captain",
+          "Match-turner in big games"
+        ]
+      },
+      {
+        "name": "James Anderson",
+        "imagePath": "anderson.jpg",
+        "hints": [
+          "700+ Test wickets (pace)",
+          "Swing king in English conditions",
+          "Longevity over two decades",
+          "England's leading wicket-taker"
+        ]
+      },
+      {
+        "name": "Stuart Broad",
+        "imagePath": "broad.jpg",
+        "hints": [
+          "600+ Test wickets",
+          "8/15 vs Australia (Trent Bridge)",
+          "Ashes enforcer",
+          "Retired 2023 with fairytale finish"
+        ]
+      },
+      {
+        "name": "Alastair Cook",
+        "imagePath": "cook.jpg",
+        "hints": [
+          "England's leading Test run-scorer",
+          "12,000+ Test runs",
+          "Captaincy across eras",
+          "Hundred on debut and farewell Tests"
+        ]
+      },
+      {
+        "name": "Jofra Archer",
+        "imagePath": "archer.jpg",
+        "hints": [
+          "2019 World Cup Super Over bowler",
+          "High pace and bounce",
+          "Debut year instant impact",
+          "Franchise T20 star"
+        ]
+      },
+      {
+        "name": "Babar Azam",
+        "imagePath": "babar.jpg",
+        "hints": [
+          "Pakistan's modern batting star",
+          "No.1 ODI batter stints",
+          "Consistent across formats",
+          "Elegant cover drives"
+        ]
+      },
+      {
+        "name": "Shaheen Afridi",
+        "imagePath": "shaheen.jpg",
+        "hints": [
+          "Left-arm pace spearhead",
+          "2021 T20 WC spell vs India",
+          "Tall release and swing",
+          "Early breakthroughs specialist"
+        ]
+      },
+      {
+        "name": "Wasim Akram",
+        "imagePath": "wasim.jpg",
+        "hints": [
+          "Sultan of Swing",
+          "414 Test & 502 ODI wickets",
+          "Left-arm pace pioneer",
+          "1992 World Cup winner"
+        ]
+      },
+      {
+        "name": "Waqar Younis",
+        "imagePath": "waqar.jpg",
+        "hints": [
+          "Toe-crushing yorkers",
+          "Reverse swing maestro",
+          "790+ international wickets",
+          "Formed legendary duo with Wasim"
+        ]
+      },
+      {
+        "name": "Inzamam-ul-Haq",
+        "imagePath": "inzamam.jpg",
+        "hints": [
+          "Pakistan's middle-order giant",
+          "Leader in 1992 WC knockout games",
+          "11,000+ ODI runs",
+          "Calm match-winner"
+        ]
+      },
+      {
+        "name": "Shoaib Akhtar",
+        "imagePath": "shoaib.jpg",
+        "hints": [
+          "Rawalpindi Express (fastest 161.3 kph)",
+          "Explosive spells with new ball",
+          "Unplayable pace bursts",
+          "Cult figure in world cricket"
+        ]
+      },
+      {
+        "name": "David Warner",
+        "imagePath": "warner.jpg",
+        "hints": [
+          "Aggressive left-handed opener",
+          "Triple-century in Tests (335*)",
+          "2015 World Cup winner",
+          "IPL Orange Cap winner"
+        ]
+      },
+      {
+        "name": "Aaron Finch",
+        "imagePath": "finch.jpg",
+        "hints": [
+          "Former Australia white-ball captain",
+          "172 T20I highest score (2018)",
+          "Powerplay enforcer",
+          "2015 World Cup winner"
+        ]
+      },
+      {
+        "name": "Pat Cummins",
+        "imagePath": "cummins.jpg",
+        "hints": [
+          "Led Australia to WTC 2023 & WC 2023",
+          "No.1 Test fast bowler stints",
+          "Pace and accuracy leader",
+          "Useful lower-order batting"
+        ]
+      },
+      {
+        "name": "Mitchell Starc",
+        "imagePath": "starc.jpg",
+        "hints": [
+          "Left-arm pace with late swing",
+          "Player of the Tournament WC 2015",
+          "Most wickets WC 2019",
+          "Unplayable yorkers"
+        ]
+      },
+      {
+        "name": "Nathan Lyon",
+        "imagePath": "lyon.jpg",
+        "hints": [
+          "Australia's leading off-spinner",
+          "500+ Test wickets",
+          "Nickname 'GOAT'",
+          "Bounce and overspin specialist"
+        ]
+      },
+      {
+        "name": "Matthew Hayden",
+        "imagePath": "hayden.jpg",
+        "hints": [
+          "Dominant left-handed opener",
+          "380 vs Zimbabwe (then Test record)",
+          "2003 & 2007 WC winner",
+          "Powerful down-the-ground hitting"
+        ]
+      },
+      {
+        "name": "Justin Langer",
+        "imagePath": "langer.jpg",
+        "hints": [
+          "Gritty opener partnering Hayden",
+          "Key in Australia's golden era",
+          "Later Australia head coach",
+          "Hundreds in Ashes"
+        ]
+      },
+      {
+        "name": "Mark Waugh",
+        "imagePath": "markwaugh.jpg",
+        "hints": [
+          "Elegant stroke-maker",
+          "Twin of Steve Waugh",
+          "1999 World Cup winner",
+          "Outstanding slip catcher"
+        ]
+      },
+      {
+        "name": "Andrew Flintoff",
+        "imagePath": "flintoff.jpg",
+        "hints": [
+          "2005 Ashes talisman",
+          "Fast-bowling all-rounder",
+          "Big-match performances",
+          "England vice-captain in Ashes wins"
+        ]
+      },
+      {
+        "name": "Kevin Pietersen",
+        "imagePath": "pietersen.jpg",
+        "hints": [
+          "Switch-hit innovator",
+          "2005 & 2010-11 Ashes star",
+          "Over 8,000 Test runs",
+          "Box-office batting"
+        ]
+      },
+      {
+        "name": "Jos Buttler",
+        "imagePath": "buttler.jpg",
+        "hints": [
+          "England white-ball captain",
+          "T20 World Cup 2022 winner",
+          "360-degree power-hitter",
+          "Elite wicketkeeping skills"
+        ]
+      },
+      {
+        "name": "Eoin Morgan",
+        "imagePath": "morgan.jpg",
+        "hints": [
+          "Led England to 2019 World Cup win",
+          "Revolutionized England's ODI approach",
+          "Ireland-born left-hander",
+          "Six-hitting record in an ODI innings"
+        ]
+      },
+      {
+        "name": "Jonny Bairstow",
+        "imagePath": "bairstow.jpg",
+        "hints": [
+          "Aggressive keeper-batter",
+          "Twin hundreds in Tests (2022 purple patch)",
+          "2019 World Cup winner",
+          "Explosive opening in ODIs"
+        ]
+      },
+      {
+        "name": "Marcus Trescothick",
+        "imagePath": "trescothick.jpg",
+        "hints": [
+          "Left-handed England opener",
+          "Pioneer of ODI aggression for England",
+          "Ashes 2005 contributor",
+          "Coach post-retirement"
+        ]
+      },
+      {
+        "name": "Michael Vaughan",
+        "imagePath": "vaughan.jpg",
+        "hints": [
+          "England captain Ashes 2005",
+          "Stylish top-order batter",
+          "Prolific in 2002-03",
+          "Later commentator"
+        ]
+      },
+      {
+        "name": "Younis Khan",
+        "imagePath": "younis.jpg",
+        "hints": [
+          "10,000+ Test runs for Pakistan",
+          "Triple-century vs SL (2009)",
+          "Reliable No.3 batter",
+          "Captain ICC WT20 2009 winners"
+        ]
+      },
+      {
+        "name": "Misbah-ul-Haq",
+        "imagePath": "misbah.jpg",
+        "hints": [
+          "Calm Pakistan Test captain",
+          "Led to No.1 Test ranking (2016)",
+          "Longest career starting late",
+          "Iconic Lord's push-up celebration"
+        ]
+      },
+      {
+        "name": "Saeed Anwar",
+        "imagePath": "anwar.jpg",
+        "hints": [
+          "194 ODI record score (1997)",
+          "Elegant left-handed opener",
+          "Century-rich 1990s",
+          "Prolific vs India"
+        ]
+      },
+      {
+        "name": "Abdul Razzaq",
+        "imagePath": "razzaq.jpg",
+        "hints": [
+          "Big-hitting all-rounder",
+          "Match-winning knocks at death",
+          "Medium-pace swing",
+          "Champions Trophy 2004 winner"
+        ]
+      },
+      {
+        "name": "Saqlain Mushtaq",
+        "imagePath": "saqlain.jpg",
+        "hints": [
+          "Inventor of the 'doosra'",
+          "ODI wicket leader late 1990s",
+          "Off-spin pioneer",
+          "Coach for Pakistan"
+        ]
+      },
+      {
+        "name": "Aravinda de Silva",
+        "imagePath": "aravinda.jpg",
+        "hints": [
+          "1996 WC final hero (107 & 3 wkts)",
+          "Sri Lankan batting genius",
+          "Versatile strokeplay",
+          "Key in 1996 WC triumph"
+        ]
+      },
+      {
+        "name": "Sanath Jayasuriya",
+        "imagePath": "jayasuriya.jpg",
+        "hints": [
+          "Pinch-hitting ODI revolution",
+          "13,000+ ODI runs & 300+ wickets",
+          "1996 World Cup winner",
+          "Explosive left-hander"
+        ]
+      },
+      {
+        "name": "Chaminda Vaas",
+        "imagePath": "vaas.jpg",
+        "hints": [
+          "Left-arm swing bowler",
+          "ODI best 8/19",
+          "400+ international wickets",
+          "New-ball craftsman"
+        ]
+      },
+      {
+        "name": "Angelo Mathews",
+        "imagePath": "mathews.jpg",
+        "hints": [
+          "Sri Lanka all-rounder and captain",
+          "Finisher in ODIs",
+          "Long career across roles",
+          "Test double-hundred"
+        ]
+      },
+      {
+        "name": "Faf du Plessis",
+        "imagePath": "faf.jpg",
+        "hints": [
+          "South Africa captain across formats",
+          "Debut Test rearguard 110 in Adelaide",
+          "Elite fielder",
+          "T20 franchise star"
+        ]
+      },
+      {
+        "name": "Quinton de Kock",
+        "imagePath": "dekock.jpg",
+        "hints": [
+          "Aggressive keeper-opener",
+          "Fast ODI hundreds",
+          "2019 WC leading runs for SA",
+          "Left-hander with flair"
+        ]
+      },
+      {
+        "name": "Makhaya Ntini",
+        "imagePath": "ntini.jpg",
+        "hints": [
+          "First black African to play Tests for SA",
+          "390 Test wickets",
+          "Relentless workhorse",
+          "Inspiration across generations"
+        ]
+      },
+      {
+        "name": "Morne Morkel",
+        "imagePath": "morkel.jpg",
+        "hints": [
+          "Tall fast bowler",
+          "309 Test wickets",
+          "Steepling bounce",
+          "New-ball partner to Steyn"
+        ]
+      },
+      {
+        "name": "Allan Donald",
+        "imagePath": "donald.jpg",
+        "hints": [
+          "White Lightning pace",
+          "330 Test wickets",
+          "Famous duel vs Atherton",
+          "SA pace spearhead 1990s"
+        ]
+      },
+      {
+        "name": "Trent Boult",
+        "imagePath": "boult.jpg",
+        "hints": [
+          "Left-arm swing artist",
+          "2015 & 2019 WC star",
+          "New-ball wickets for NZ",
+          "Catches in deep crucial"
+        ]
+      },
+      {
+        "name": "Tim Southee",
+        "imagePath": "southee.jpg",
+        "hints": [
+          "New Zealand swing bowler",
+          "7-for on Test debut",
+          "WTC 2021 champion squad",
+          "Skipper in T20Is"
+        ]
+      },
+      {
+        "name": "Daniel Vettori",
+        "imagePath": "vettori.jpg",
+        "hints": [
+          "Left-arm spinner, NZ captain",
+          "300+ Test wickets",
+          "Handy lower-order batting",
+          "Young debutant turned stalwart"
+        ]
+      },
+      {
+        "name": "Stephen Fleming",
+        "imagePath": "fleming.jpg",
+        "hints": [
+          "Long-serving NZ captain",
+          "Tactical mastermind",
+          "Elegant left-handed batter",
+          "Coach of successful T20 sides"
+        ]
+      },
+      {
+        "name": "Nathan Astle",
+        "imagePath": "astle.jpg",
+        "hints": [
+          "222 vs England (fastest Test 200 then)",
+          "Aggressive ODI bat",
+          "Useful medium-pace",
+          "Key NZ run-scorer 1990s-2000s"
+        ]
+      },
+      {
+        "name": "Chris Cairns",
+        "imagePath": "cairns.jpg",
+        "hints": [
+          "NZ all-rounder with power",
+          "Test and ODI match-winner",
+          "Fast-medium and big hitting",
+          "2000 ICC KnockOut hero"
+        ]
+      },
+      {
+        "name": "Viv Richards",
+        "imagePath": "richards.jpg",
+        "hints": [
+          "Master Blaster of 1970s-80s",
+          "Feared by pace attacks",
+          "1979 World Cup winner",
+          "Swagger and dominance"
+        ]
+      },
+      {
+        "name": "Clive Lloyd",
+        "imagePath": "lloyd.jpg",
+        "hints": [
+          "Captain of dominant WI (1970s-80s)",
+          "1975 & 1979 WC titles",
+          "Middle-order powerhouse",
+          "Tall leader with glasses"
+        ]
+      },
+      {
+        "name": "Desmond Haynes",
+        "imagePath": "haynes.jpg",
+        "hints": [
+          "Opening partner to Greenidge",
+          "8,000+ ODI runs",
+          "Consistent across a decade",
+          "Barbados legend"
+        ]
+      },
+      {
+        "name": "Gordon Greenidge",
+        "imagePath": "greenidge.jpg",
+        "hints": [
+          "Fearsome WI opener",
+          "Double hundreds in Tests",
+          "Two-time World Cup winner",
+          "Brutal pulls and cuts"
+        ]
+      },
+      {
+        "name": "Andy Roberts",
+        "imagePath": "roberts.jpg",
+        "hints": [
+          "Pioneer of WI pace battery",
+          "Varied bouncers deception",
+          "202 Test wickets",
+          "Two-time World Cup winner"
+        ]
+      },
+      {
+        "name": "Michael Holding",
+        "imagePath": "holding.jpg",
+        "hints": [
+          "Whispering Death pace",
+          "Fastest of his era",
+          "Test best 8/92",
+          "Renowned commentator"
+        ]
+      },
+      {
+        "name": "Joel Garner",
+        "imagePath": "garner.jpg",
+        "hints": [
+          "Big Bird towering pacer",
+          "Deadly yorkers in ODIs",
+          "World Cup winning squads",
+          "Economical and lethal"
+        ]
+      },
+      {
+        "name": "Shakib Al Hasan",
+        "imagePath": "shakib.jpg",
+        "hints": [
+          "Bangladesh's greatest all-rounder",
+          "No.1 ICC all-rounder stints",
+          "6000+ ODI runs & 300+ wickets",
+          "2019 WC 600+ runs"
+        ]
+      },
+      {
+        "name": "Tamim Iqbal",
+        "imagePath": "tamim.jpg",
+        "hints": [
+          "Bangladesh's leading ODI run-scorer",
+          "Aggressive left-handed opener",
+          "Centuries vs top sides",
+          "Long-time team anchor"
+        ]
+      },
+      {
+        "name": "Mushfiqur Rahim",
+        "imagePath": "mushfiqur.jpg",
+        "hints": [
+          "Wicketkeeper-batter stalwart",
+          "First Bangladeshi Test double-ton",
+          "Clutch knocks in chases",
+          "Over 7000 ODI runs"
+        ]
+      },
+      {
+        "name": "Mashrafe Mortaza",
+        "imagePath": "mashrafe.jpg",
+        "hints": [
+          "Captain who lifted Bangladesh ODIs",
+          "Right-arm medium-fast",
+          "Injuries but resilient career",
+          "2015 WC quarterfinal run"
+        ]
+      },
+      {
+        "name": "Mustafizur Rahman",
+        "imagePath": "mustafizur.jpg",
+        "hints": [
+          "The Fizz cutters specialist",
+          "Debut ODI series 5-fers",
+          "Death-overs weapon",
+          "IPL success early career"
+        ]
+      },
+      {
+        "name": "Rashid Khan",
+        "imagePath": "rashid.jpg",
+        "hints": [
+          "Afghanistan leg-spin sensation",
+          "Fast googly and control",
+          "Top T20 bowler rankings",
+          "Global franchise star"
+        ]
+      },
+      {
+        "name": "Mohammad Nabi",
+        "imagePath": "nabi.jpg",
+        "hints": [
+          "Afghanistan veteran all-rounder",
+          "Power-hitting finisher",
+          "Off-spin control",
+          "Former captain and mentor"
+        ]
+      },
+      {
+        "name": "Mujeeb Ur Rahman",
+        "imagePath": "mujeeb.jpg",
+        "hints": [
+          "Mystery spinner at young age",
+          "Carrom ball variations",
+          "Powerplay spinner in T20",
+          "Afghanistan white-ball asset"
+        ]
+      },
+      {
+        "name": "Andy Flower",
+        "imagePath": "andyflower.jpg",
+        "hints": [
+          "Zimbabwe's greatest batter",
+          "Prolific wicketkeeper-batter",
+          "Later England head coach",
+          "Courageous protests (2003)"
+        ]
+      },
+      {
+        "name": "Heath Streak",
+        "imagePath": "streak.jpg",
+        "hints": [
+          "Zimbabwe pace spearhead",
+          "Test and ODI 200+ wickets",
+          "Lower-order fighter",
+          "Captain and coach"
+        ]
+      },
+      {
+        "name": "Paul Stirling",
+        "imagePath": "stirling.jpg",
+        "hints": [
+          "Ireland's prolific opener",
+          "Century-maker in ODIs",
+          "T20 franchise regular",
+          "Powerplay aggressor"
+        ]
+      },
+      {
+        "name": "Ryan ten Doeschate",
+        "imagePath": "tendo.jpg",
+        "hints": [
+          "Netherlands ODI average > 67",
+          "Associate legend",
+          "T20 leagues standout",
+          "Clutch middle-order batter"
+        ]
+      },
+      {
+        "name": "Kyle Coetzer",
+        "imagePath": "coetzer.jpg",
+        "hints": [
+          "Scotland captain and opener",
+          "Hundreds vs full members",
+          "Led famous ODI wins",
+          "Technically sound batting"
+        ]
+      }
+    ]
+  }
