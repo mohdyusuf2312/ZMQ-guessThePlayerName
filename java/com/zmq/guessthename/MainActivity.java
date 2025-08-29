@@ -2,16 +2,15 @@ package com.zmq.guessthename;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.ArraySet;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -23,20 +22,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
-import java.util.ArrayList;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-
     public boolean isPlayerWon = false;
+    private final ArraySet<Character> guessLetters = new ArraySet<>();
+    private TextWatcher textWatcher;
+    private EditText editText;
 
     @SuppressLint("SetTextI18n")
     private void showGameOverDialog(Bitmap full, String chosenPlayer, String color) {
         Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.dialog_game_over);
         dialog.setCancelable(false);
-
         GradientDrawable bg = new GradientDrawable(
                 GradientDrawable.Orientation.BL_TR,
                 new int[] {
@@ -49,11 +47,13 @@ public class MainActivity extends AppCompatActivity {
         );
         bg.setCornerRadius(16f);
         View gradientBG = dialog.findViewById(R.id.dialog);
-        gradientBG.setBackground(bg);
-
+        if (gradientBG != null) {
+            gradientBG.setBackground(bg);
+        }
         if (color.equals("green")) {
             TextView resultText = dialog.findViewById(R.id.result);
             resultText.setText("You won!");
+            resultText.announceForAccessibility("You won");
             resultText.setTextColor(Color.parseColor("#4CAF50"));
         } else if (color.equals("red")) {
             TextView resultText = dialog.findViewById(R.id.result);
@@ -75,13 +75,10 @@ public class MainActivity extends AppCompatActivity {
             playGame();
             dialog.dismiss();
         });
-
         btnQuit.setOnClickListener(fn -> {
             finish();
         });
-
         dialog.show();
-
     }
 
     public CountDownTimer guessTimer;
@@ -108,15 +105,16 @@ public class MainActivity extends AppCompatActivity {
                         randomIndex = random.nextInt(9);
                     }while (openGrid.contains(randomIndex));
                     openGrid.add(randomIndex);
-                    ImageViews[randomIndex].setVisibility(ImageView.VISIBLE);
+                    ImageViews[randomIndex].setImageBitmap(cropped_pieces[randomIndex]);
                 }
                 lives--;
                 if (lives <= 0 && !isPlayerWon){
+                    editText.removeTextChangedListener(textWatcher);
                     showGameOverDialog(full, chosenPlayer, "red");
                 } else {
                     Toast.makeText(MainActivity.this, "Time’s up! You lost 1 life.", Toast.LENGTH_SHORT).show();
                     TextView live = findViewById(R.id.lives);
-                    live.setText("Lives: " + "❤️".repeat(lives));
+                    live.setText("Lives: " + "❤️".repeat(Math.max(0, lives)));
                     if (!isPlayerWon){
                         setGuessTimer(full, chosenPlayer, openGrid);
                     }
@@ -127,13 +125,16 @@ public class MainActivity extends AppCompatActivity {
 
     @SuppressLint("SetTextI18n")
     public void playGame(){
+        guessLetters.clear();
+        editText.removeTextChangedListener(textWatcher);
+        isPlayerWon = false;
 
-//        Display lives
-        String livesString = "Lives: " + "❤️".repeat(lives);
+//       Display lives
+        String livesString = "Lives: " + "❤️".repeat(Math.max(0, lives));
         TextView live= findViewById(R.id.lives);
         live.setText(livesString);
 
-//        choose player
+//       choose player
         PlayersList playersList = new PlayersList();
         int chosenPlayerIndex = playersList.chosenPlayerIndex();
         String chosenPlayer = (playersList.playerList.get(chosenPlayerIndex)).toUpperCase();
@@ -151,10 +152,8 @@ public class MainActivity extends AppCompatActivity {
         TextView playerTextView = findViewById(R.id.playerTextView);
         playerTextView.setText(hiddenWord);
 
-
 //        Image chosen
         Bitmap full = playersList.getPlayerImage(this, chosenPlayerIndex);
-
         int partWidth = full.getWidth()/3;
         int partHeight = full.getHeight()/3;
 
@@ -163,111 +162,115 @@ public class MainActivity extends AppCompatActivity {
         for(int row = 0; row < 3; row++){
             for(int column = 0; column < 3; column++){
                 Bitmap cropped = Bitmap.createBitmap(full, column * partWidth, row * partHeight, partWidth, partHeight);
-                ImageViews[index].setImageBitmap(cropped);
-                ImageViews[index].setVisibility(ImageView.INVISIBLE);
+                cropped_pieces[index] = cropped;
+                ImageViews[index].setImageResource(R.color.transparent);
                 index++;
             }
         }
-
 //        Track opened grid indexes
         ArraySet <Integer> openGrid = new ArraySet<>();
 
-
-//        Visible two random unique grid initially
+//       Visible one random unique grid initially
         Random random = new Random();
-        while (openGrid.size() < 2){
+        do {
             int randomIndex = random.nextInt(9);
-            if (!openGrid.contains(randomIndex)){
-                ImageViews[randomIndex].setVisibility(ImageView.VISIBLE);
+            if (randomIndex != 4 && randomIndex != 1) {
+                ImageViews[randomIndex].setImageBitmap(cropped_pieces[randomIndex]);
                 openGrid.add(randomIndex);
             }
-        }
+        } while (openGrid.size() < 1);
 
-        ArrayList<Character> guessLetters = new ArrayList<>();
         if (!isPlayerWon){
             setGuessTimer(full, chosenPlayer, openGrid);
         }
-        Button btn = findViewById(R.id.btnSubmit);
-        btn.setOnClickListener(fn -> {
-
-//           guess Character
-            EditText editText = findViewById(R.id.guessChar);
-            String guessInput = (editText.getText().toString()).toUpperCase();
-
-            if(guessInput.isEmpty()){
-                Toast.makeText(this, "Please enter a letter.", Toast.LENGTH_SHORT).show();
-                return;
-            } else if (guessInput.matches("[0-9]")) {
-                Toast.makeText(this, "Numbers are not allowed.", Toast.LENGTH_SHORT).show();
-                return;
-            } else {
-                boolean foundInGuessLetters = false;
-                char guessChar = guessInput.charAt(0);
-                for (char c: guessLetters){
-                    if (c == guessChar){
-                        foundInGuessLetters = true;
-                        Toast.makeText(this, "You already guessed that letter.", Toast.LENGTH_SHORT).show();
-                        break;
-                    }
-                }
-                if (!foundInGuessLetters) {
-                    guessLetters.add(guessChar);
-
-                    boolean foundInChosenName = false;
-                    for(int i = 0; i < chosenPlayer.length(); i++){
-                        if(chosenPlayer.charAt(i) == guessChar){
-                            hiddenWord.setCharAt(i, guessChar);
-                            foundInChosenName = true;
+        textWatcher = new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (count > 0) {
+//                   guess Character
+                    String guessInput = s.toString().toUpperCase();
+                    if(!guessInput.matches("[A-Z]")){
+                        Toast.makeText(MainActivity.this, "Please enter a valid letter (A-Z).", Toast.LENGTH_SHORT).show();
+                        editText.setText("");
+                        return;
+                    } else {
+                        boolean foundInGuessLetters = false;
+                        char guessChar = guessInput.charAt(0);
+                        for (char c: guessLetters){
+                            if (c == guessChar){
+                                foundInGuessLetters = true;
+                                Toast.makeText(MainActivity.this, "You already guessed that letter.", Toast.LENGTH_SHORT).show();
+                                editText.setText("");
+                                return;
+                            }
                         }
-                    }
-
-                    if(!foundInChosenName){
-                        if (openGrid.size() < 9) {
-                            int randomIndex;
-                            do {
-                                randomIndex = random.nextInt(9);
-                            } while (openGrid.contains(randomIndex));
-//                        Add new open grid
-                            openGrid.add(randomIndex);
-                            ImageViews[randomIndex].setVisibility(ImageView.VISIBLE);
+                        if (!foundInGuessLetters) {
+                            guessLetters.add(guessChar);
+                            boolean foundInChosenName = false;
+                            for(int i = 0; i < chosenPlayer.length(); i++){
+                                if(chosenPlayer.charAt(i) == guessChar){
+                                    hiddenWord.setCharAt(i, guessChar);
+                                    foundInChosenName = true;
+                                }
+                            }
+                            if(!foundInChosenName){
+                                if (openGrid.size() < 9) {
+                                    int randomIndex;
+                                    do {
+                                        randomIndex = random.nextInt(9);
+                                    } while (openGrid.contains(randomIndex));
+//                                   Add new open grid
+                                    openGrid.add(randomIndex);
+                                    ImageViews[randomIndex].setImageBitmap(cropped_pieces[randomIndex]);
+                                }
+                                lives--;
+                                if (lives > 0 && !isPlayerWon) {
+                                    Toast.makeText(MainActivity.this, "'" + guessChar + "' is not in the name. You lost 1 life.", Toast.LENGTH_SHORT).show();
+                                    live.setText("Lives: " + "❤️".repeat(Math.max(0, lives)));
+                                } else {
+                                    live.setText("Lives: " + "❤️".repeat(0));
+                                    editText.removeTextChangedListener(textWatcher);
+                                    showGameOverDialog(full, chosenPlayer, "red");
+                                    editText.setText("");
+                                    return;
+                                }
+                            }
                         }
-                        lives--;
-                        if (lives > 0 && !isPlayerWon) {
-                            Toast.makeText(this, "'" + guessChar + "' is not in the name. You lost 1 life.", Toast.LENGTH_SHORT).show();
-                            live.setText("Lives: " + "❤️".repeat(lives));
-                        } else {
-                            live.setText("Lives: " + "❤️".repeat(0));
-                            showGameOverDialog(full, chosenPlayer, "red");
-                            editText.setText("");
-                            return;
+                        boolean foundBlank = false;
+                        for (int j = 0; j < hiddenWord.length(); j++) {
+                            if (hiddenWord.charAt(j) == '_'){
+                                foundBlank = true;
+                                break;
+                            }
                         }
+                        if (!foundBlank) {
+                            isPlayerWon = true;
+                            if (guessTimer != null) {
+                                guessTimer.cancel();
+                            }
+                            editText.removeTextChangedListener(textWatcher);
+                            showGameOverDialog(full, chosenPlayer, "green");
+                        }
+//                       Update UI
+                        playerTextView.setText(hiddenWord);
                     }
-                }
-
-                boolean foundBlank = false;
-                for (int j = 0; j < hiddenWord.length(); j++) {
-                    if (hiddenWord.charAt(j) == '_'){
-                        foundBlank = true;
-                        break;
+                    if (!isPlayerWon){
+                        setGuessTimer(full, chosenPlayer, openGrid);
                     }
+                    editText.setText("");
                 }
-                if (!foundBlank) {
-                    isPlayerWon = true;
-                    guessTimer.cancel();
-                    showGameOverDialog(full, chosenPlayer, "green");
-                }
-//                Update UI
-                playerTextView.setText(hiddenWord);
             }
-            if (!isPlayerWon){
-                setGuessTimer(full, chosenPlayer, openGrid);
-            }
-            editText.setText("");
-        });
+            @Override
+            public void afterTextChanged(Editable s) {}
+        };
+        editText.addTextChangedListener(textWatcher);
     }
 
 //   Max wrong guess
     int lives = 4;
+    Bitmap[] cropped_pieces = new Bitmap[9];
 
 //    Image grid
     private final ImageView[] ImageViews = new ImageView[9];
@@ -285,19 +288,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         timer = findViewById(R.id.timer);
-
-        EditText editText = findViewById(R.id.guessChar);
-        Button btnSubmit = findViewById(R.id.btnSubmit);
-
-        editText.setOnEditorActionListener((v, actionId, event) -> {
-            if (actionId == EditorInfo.IME_ACTION_DONE) {
-                btnSubmit.performClick(); // submit as if button was clicked
-                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
-                return true;
-            }
-            return false;
-        });
+        editText = findViewById(R.id.guessChar);
 
         GradientDrawable bg = new GradientDrawable(
                 GradientDrawable.Orientation.BL_TR,
