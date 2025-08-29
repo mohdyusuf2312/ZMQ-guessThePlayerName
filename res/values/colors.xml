@@ -6,4 +6,5 @@
     <color name="green">#4CAF50</color>
     <color name="btn">#8CC5C0C0</color>
     <color name="mainBG">#EE669FBA</color>
+    <color name="transparent">#00000000</color>
 </resources>
