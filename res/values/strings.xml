@@ -20,4 +20,5 @@
     <string name="lives">Lives</string>
     <string name="chosenPlayer">This is the name to be guessed</string>
     <string name="enterLetter">Enter a letter to guess</string>
+    <string name="hint">This is the hint to guess.</string>
 </resources>
