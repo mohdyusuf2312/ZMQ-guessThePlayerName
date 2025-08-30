@@ -3,7 +3,6 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.util.JsonReader;
 
 import androidx.annotation.NonNull;
 
@@ -14,8 +13,6 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
 public class PlayersList {
     private final String jsonStr;
@@ -42,21 +39,21 @@ public class PlayersList {
     }
 
     public Bitmap getPlayerImage(@NonNull Context context, int index){
-//        String imageName = chosenPlayerImageName(index);
-//        @SuppressLint("DiscouragedApi")
-//        int resId = context.getResources().getIdentifier(
-//                imageName,
-//                "drawable",
-//                context.getPackageName()
-//        );
-//        return BitmapFactory.decodeResource(context.getResources(), resId);
+        String imageName = chosenPlayerImageName(index);
         @SuppressLint("DiscouragedApi")
         int resId = context.getResources().getIdentifier(
-                "p1",
-                "drawable",
+                imageName,
+                "raw",
                 context.getPackageName()
         );
-        return BitmapFactory.decodeResource(context.getResources(), resId);
+        if (resId == 0) {
+            return BitmapFactory.decodeResource(context.getResources(), R.raw.default_player);
+        }
+        Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), resId);
+        if (bitmap == null) {
+            return BitmapFactory.decodeResource(context.getResources(), R.raw.default_player);
+        }
+        return bitmap;
     }
 
     public String loadJson(Context context, String filename) {
