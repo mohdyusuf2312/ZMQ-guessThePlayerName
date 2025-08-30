@@ -2,6 +2,7 @@ package com.zmq.guessthename;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
     @SuppressLint("SetTextI18n")
     private void showGameOverDialog(Bitmap full, String chosenPlayer, String color) {
+        guessTimer.cancel();
         Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.dialog_game_over);
         dialog.setCancelable(false);
@@ -39,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 GradientDrawable.Orientation.BL_TR,
                 new int[] {
                         Color.parseColor("#413CA6"),
-                        Color.parseColor("#5353B8"),
+//                        Color.parseColor("#5353B8"),
                         Color.parseColor("#4BC1C9"),
                         Color.parseColor("#00D0FF"),
                         Color.parseColor("#185E94")
@@ -135,9 +137,9 @@ public class MainActivity extends AppCompatActivity {
         live.setText(livesString);
 
 //       choose player
-        PlayersList playersList = new PlayersList();
+        PlayersList playersList = new PlayersList(this);
         int chosenPlayerIndex = playersList.chosenPlayerIndex();
-        String chosenPlayer = (playersList.playerList.get(chosenPlayerIndex)).toUpperCase();
+        String chosenPlayer = (playersList.chosenPlayer(chosenPlayerIndex)).toUpperCase();
 
 //        Hidden Characters
         StringBuilder hiddenWord = new StringBuilder();
@@ -151,6 +153,10 @@ public class MainActivity extends AppCompatActivity {
 
         TextView playerTextView = findViewById(R.id.playerTextView);
         playerTextView.setText(hiddenWord);
+
+//        Display Hint
+        TextView hint = findViewById(R.id.hint);
+        hint.setText(playersList.getHint(chosenPlayerIndex));
 
 //        Image chosen
         Bitmap full = playersList.getPlayerImage(this, chosenPlayerIndex);
@@ -167,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
                 index++;
             }
         }
-//        Track opened grid indexes
+//       Track opened grid indexes
         ArraySet <Integer> openGrid = new ArraySet<>();
 
 //       Visible one random unique grid initially
@@ -294,7 +300,7 @@ public class MainActivity extends AppCompatActivity {
                 GradientDrawable.Orientation.BL_TR,
                 new int[] {
                         Color.parseColor("#413CA6"),
-                        Color.parseColor("#5353B8"),
+//                        Color.parseColor("#5353B8"),
                         Color.parseColor("#4BC1C9"),
                         Color.parseColor("#00D0FF"),
                         Color.parseColor("#185E94")
