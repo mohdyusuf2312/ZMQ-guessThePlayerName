@@ -1,4 +1,5 @@
 package com.zmq.guessthename;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -42,12 +43,14 @@ public class PlayersList {
 
     public Bitmap getPlayerImage(@NonNull Context context, int index){
 //        String imageName = chosenPlayerImageName(index);
+//        @SuppressLint("DiscouragedApi")
 //        int resId = context.getResources().getIdentifier(
 //                imageName,
 //                "drawable",
 //                context.getPackageName()
 //        );
 //        return BitmapFactory.decodeResource(context.getResources(), resId);
+        @SuppressLint("DiscouragedApi")
         int resId = context.getResources().getIdentifier(
                 "p1",
                 "drawable",
