@@ -2,36 +2,36 @@ package com.zmq.guessthename;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.JsonReader;
 
 import androidx.annotation.NonNull;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 public class PlayersList {
-//    Images are assign according to index number of following ArrayList
-    ArrayList<String> playerList = new ArrayList<>(Arrays.asList(
-            "Rohit Sharma",
-            "Shubman Gill",
-            "Virat Kohli",
-            "Shreyas Iyer",
-            "KL Rahul",
-            "Rishabh Pant",
-            "Hardik Pandya",
-            "Axar Patel",
-            "Washington Sundar",
-            "Kuldeep Yadav",
-            "Harshit Rana",
-            "Mohammed Shami",
-            "Arshdeep Singh",
-            "Varun Chakaravarthy",
-            "Ravindra Jadeja",
-            "Mohammed Siraj"
-    ));
+    private final String jsonStr;
+    public PlayersList(Context context){
+        this.jsonStr = loadJson(context, "players.json");
+    }
 
 //    size of list
     public int size(){
-        return playerList.size();
+        try {
+            JSONObject rootObject = new JSONObject(jsonStr);
+            JSONArray playersArray = rootObject.getJSONArray("players");
+            return playersArray.length();
+        } catch (JSONException err) {
+            err.printStackTrace();
+            return 0;
+        }
     }
 
 //    choose player
@@ -41,11 +41,72 @@ public class PlayersList {
     }
 
     public Bitmap getPlayerImage(@NonNull Context context, int index){
+//        String imageName = chosenPlayerImageName(index);
+//        int resId = context.getResources().getIdentifier(
+//                imageName,
+//                "drawable",
+//                context.getPackageName()
+//        );
+//        return BitmapFactory.decodeResource(context.getResources(), resId);
         int resId = context.getResources().getIdentifier(
-                "p" + index,
+                "p1",
                 "drawable",
                 context.getPackageName()
         );
         return BitmapFactory.decodeResource(context.getResources(), resId);
+    }
+
+    public String loadJson(Context context, String filename) {
+        String json = null;
+        try {
+            InputStream iStream = context.getResources().openRawResource(R.raw.players);
+            int size = iStream.available();
+            byte[] buffer = new byte[size];
+            iStream.read(buffer);
+            iStream.close();
+            json = new String(buffer, StandardCharsets.UTF_8);
+        } catch (IOException err) {
+            err.printStackTrace();
+            return "JSON file not found";
+        }
+        return json;
+    }
+
+    public String chosenPlayer(int index) {
+        try {
+            JSONObject rootObj = new JSONObject(jsonStr);
+            JSONArray playersArray = rootObj.getJSONArray("players");
+            JSONObject playerObj = playersArray.getJSONObject(index);
+            return playerObj.getString("name");
+        } catch (JSONException err) {
+            err.printStackTrace();
+            return "Player name not found.";
+        }
+    }
+
+    public String chosenPlayerImageName(int index) {
+        try {
+            JSONObject rootObj = new JSONObject(jsonStr);
+            JSONArray playersArray = rootObj.getJSONArray("players");
+            JSONObject playerObj = playersArray.getJSONObject(index);
+            return playerObj.getString("imagePath");
+        } catch (JSONException err) {
+            err.printStackTrace();
+            return "Player imagePath not found.";
+        }
+    }
+
+    public String getHint(int index) {
+        try {
+            JSONObject rootObj = new JSONObject(jsonStr);
+            JSONArray playersArray = rootObj.getJSONArray("players");
+            JSONObject playerObj = playersArray.getJSONObject(index);
+            JSONArray playerHints = playerObj.getJSONArray("hints");
+            Random random = new Random();
+            return "Hint: " + playerHints.getString(random.nextInt(playerHints.length()));
+        } catch (JSONException err) {
+            err.printStackTrace();
+            return "Hint not found.";
+        }
     }
 }
