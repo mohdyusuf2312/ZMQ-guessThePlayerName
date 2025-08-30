@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:layout_marginTop="35dp"
         android:orientation="vertical"
         android:padding="10dp">
 
@@ -20,6 +21,8 @@
             android:textSize="28sp"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="20dp"
+            android:textColor="@color/blue"
+            android:textStyle="bold"
             android:contentDescription="@string/heading">
         </TextView>
 
@@ -37,6 +40,7 @@
                 android:textSize="14sp"
                 android:layout_marginLeft="50dp"
                 tools:ignore="RtlHardcoded"
+                android:textColor="@color/blue"
                 android:contentDescription="@string/timer">
             </TextView>
 
@@ -49,6 +53,7 @@
                 android:textSize="14sp"
                 android:layout_marginRight="50dp"
                 tools:ignore="RtlHardcoded"
+                android:textColor="@color/blue"
                 android:contentDescription="@string/lives">
             </TextView>
 
@@ -61,7 +66,7 @@
             android:columnCount="3"
             tools:ignore="UselessParent"
             android:layout_margin="10dp"
-            android:background="@drawable/crop_image_border"
+            android:background="@drawable/rounded_border"
             android:contentDescription="@string/DescriptionPlayerImage">
 
             <ImageView
@@ -72,6 +77,7 @@
                 android:layout_columnWeight="1"
                 android:padding="1dp"
                 android:scaleType="fitXY"
+                android:background="@drawable/crop_image_border"
                 android:contentDescription="@string/DescriptionImg_0">
             </ImageView>
             <ImageView
@@ -82,6 +88,7 @@
                 android:layout_columnWeight="1"
                 android:padding="1dp"
                 android:scaleType="fitXY"
+                android:background="@drawable/crop_image_border"
                 android:contentDescription="@string/DescriptionImg_1">
             </ImageView>
             <ImageView
@@ -92,6 +99,7 @@
                 android:layout_columnWeight="1"
                 android:padding="1dp"
                 android:scaleType="fitXY"
+                android:background="@drawable/crop_image_border"
                 android:contentDescription="@string/DescriptionImg_2">
             </ImageView>
             <ImageView
@@ -102,6 +110,7 @@
                 android:layout_columnWeight="1"
                 android:padding="1dp"
                 android:scaleType="fitXY"
+                android:background="@drawable/crop_image_border"
                 android:contentDescription="@string/DescriptionImg_3">
             </ImageView>
             <ImageView
@@ -112,6 +121,7 @@
                 android:layout_columnWeight="1"
                 android:padding="1dp"
                 android:scaleType="fitXY"
+                android:background="@drawable/crop_image_border"
                 android:contentDescription="@string/DescriptionImg_4">
             </ImageView>
             <ImageView
@@ -122,6 +132,7 @@
                 android:layout_columnWeight="1"
                 android:padding="1dp"
                 android:scaleType="fitXY"
+                android:background="@drawable/crop_image_border"
                 android:contentDescription="@string/DescriptionImg_5">
             </ImageView>
             <ImageView
@@ -132,6 +143,7 @@
                 android:layout_columnWeight="1"
                 android:padding="1dp"
                 android:scaleType="fitXY"
+                android:background="@drawable/crop_image_border"
                 android:contentDescription="@string/DescriptionImg_6">
             </ImageView>
             <ImageView
@@ -142,6 +154,7 @@
                 android:layout_columnWeight="1"
                 android:padding="1dp"
                 android:scaleType="fitXY"
+                android:background="@drawable/crop_image_border"
                 android:contentDescription="@string/DescriptionImg_7">
             </ImageView>
             <ImageView
@@ -152,10 +165,22 @@
                 android:layout_columnWeight="1"
                 android:padding="1dp"
                 android:scaleType="fitXY"
+                android:background="@drawable/crop_image_border"
                 android:contentDescription="@string/DescriptionImg_8">
             </ImageView>
 
         </GridLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/hint"
+            android:textColor="@color/blue"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginBottom="12dp"
+            android:contentDescription="@string/hint">
+        </TextView>
 
         <TextView
             android:id="@+id/playerTextView"
@@ -182,15 +207,6 @@
             android:contentDescription="@string/enterLetter"
             tools:ignore="contentDescription">
         </EditText>
-
-        <Button
-            android:id="@+id/btnSubmit"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_gravity="center_horizontal"
-            android:text="@string/btnSubmit"
-            android:contentDescription="@string/btnSubmit">
-        </Button>
 
     </LinearLayout>
 
