@@ -17,7 +17,7 @@ import java.util.Random;
 public class PlayersList {
     private final String jsonStr;
     public PlayersList(Context context){
-        this.jsonStr = loadJson(context, "players.json");
+        this.jsonStr = loadJson(context);
     }
 
 //    size of list
@@ -56,7 +56,7 @@ public class PlayersList {
         return bitmap;
     }
 
-    public String loadJson(Context context, String filename) {
+    public String loadJson(Context context) {
         String json = null;
         try {
             InputStream iStream = context.getResources().openRawResource(R.raw.players);
@@ -74,10 +74,8 @@ public class PlayersList {
 
     public String chosenPlayer(int index) {
         try {
-            JSONObject rootObj = new JSONObject(jsonStr);
-            JSONArray playersArray = rootObj.getJSONArray("players");
-            JSONObject playerObj = playersArray.getJSONObject(index);
-            return playerObj.getString("name");
+            JSONObject data = getPlayerData(index);
+            return data.getString("name");
         } catch (JSONException err) {
             err.printStackTrace();
             return "Player name not found.";
@@ -86,10 +84,8 @@ public class PlayersList {
 
     public String chosenPlayerImageName(int index) {
         try {
-            JSONObject rootObj = new JSONObject(jsonStr);
-            JSONArray playersArray = rootObj.getJSONArray("players");
-            JSONObject playerObj = playersArray.getJSONObject(index);
-            return playerObj.getString("imagePath");
+            JSONObject data = getPlayerData(index);
+            return data.getString("imagePath");
         } catch (JSONException err) {
             err.printStackTrace();
             return "Player imagePath not found.";
@@ -98,10 +94,8 @@ public class PlayersList {
 
     public String getHint(int index) {
         try {
-            JSONObject rootObj = new JSONObject(jsonStr);
-            JSONArray playersArray = rootObj.getJSONArray("players");
-            JSONObject playerObj = playersArray.getJSONObject(index);
-            JSONArray playerHints = playerObj.getJSONArray("hints");
+            JSONObject data = getPlayerData(index);
+            JSONArray playerHints = data.getJSONArray("hints");
             Random random = new Random();
             return "Hint: " + playerHints.getString(random.nextInt(playerHints.length()));
         } catch (JSONException err) {
@@ -109,4 +103,16 @@ public class PlayersList {
             return "Hint not found.";
         }
     }
+
+    public JSONObject getPlayerData(int index) {
+        try {
+            JSONObject rootObj = new JSONObject(jsonStr);
+            JSONArray playersArray = rootObj.getJSONArray("players");
+            return playersArray.getJSONObject(index);
+        } catch (JSONException err) {
+            err.printStackTrace();
+            return null;
+        }
+    }
 }
+
