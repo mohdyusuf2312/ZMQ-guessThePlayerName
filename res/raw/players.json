@@ -691,7 +691,7 @@
       ]
     },
     {
-      "name": "Inzamam-ul-Haq",
+      "name": "Inzamam ul Haq",
       "imagePath": "inzamam",
       "hints": [
         "Pakistan's middle-order giant",
@@ -871,7 +871,7 @@
       ]
     },
     {
-      "name": "Misbah-ul-Haq",
+      "name": "Misbah ul Haq",
       "imagePath": "misbah",
       "hints": [
         "Calm Pakistan Test captain",
@@ -1262,3 +1262,4 @@
     }
   ]
 }
+
