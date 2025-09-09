@@ -311,46 +311,6 @@
       ]
     },
     {
-      "name": "Mithali Raj",
-      "imagePath": "mithali",
-      "hints": [
-        "All-time leading women's ODI run-scorer",
-        "Indian women's cricket icon",
-        "Led India to 2005 & 2017 WC finals",
-        "Debut ODI hundred at 16"
-      ]
-    },
-    {
-      "name": "Jhulan Goswami",
-      "imagePath": "jhulan",
-      "hints": [
-        "Former leading wicket-taker in women's ODIs",
-        "Tall right-arm fast bowler",
-        "Played 200+ internationals",
-        "Arjuna & Padma Shri awardee"
-      ]
-    },
-    {
-      "name": "Smriti Mandhana",
-      "imagePath": "smriti",
-      "hints": [
-        "Elegant left-handed opener",
-        "ICC Women's Cricketer of the Year (2018, 2021)",
-        "Centuries in Eng & Aus",
-        "WPL star"
-      ]
-    },
-    {
-      "name": "Harmanpreet Kaur",
-      "imagePath": "harmanpreet",
-      "hints": [
-        "171* vs Australia (2017 WC semi)",
-        "India women's T20I captain",
-        "Explosive middle-order batter",
-        "All-round contributions"
-      ]
-    },
-    {
       "name": "Ricky Ponting",
       "imagePath": "ponting",
       "hints": [
@@ -881,26 +841,6 @@
       ]
     },
     {
-      "name": "Saeed Anwar",
-      "imagePath": "anwar",
-      "hints": [
-        "194 ODI record score (1997)",
-        "Elegant left-handed opener",
-        "Century-rich 1990s",
-        "Prolific vs India"
-      ]
-    },
-    {
-      "name": "Abdul Razzaq",
-      "imagePath": "razzaq",
-      "hints": [
-        "Big-hitting all-rounder",
-        "Match-winning knocks at death",
-        "Medium-pace swing",
-        "Champions Trophy 2004 winner"
-      ]
-    },
-    {
       "name": "Saqlain Mushtaq",
       "imagePath": "saqlain",
       "hints": [
@@ -908,16 +848,6 @@
         "ODI wicket leader late 1990s",
         "Off-spin pioneer",
         "Coach for Pakistan"
-      ]
-    },
-    {
-      "name": "Aravinda de Silva",
-      "imagePath": "aravinda",
-      "hints": [
-        "1996 WC final hero (107 & 3 wkts)",
-        "Sri Lankan batting genius",
-        "Versatile strokeplay",
-        "Key in 1996 WC triumph"
       ]
     },
     {
@@ -1058,56 +988,6 @@
         "Test and ODI match-winner",
         "Fast-medium and big hitting",
         "2000 ICC KnockOut hero"
-      ]
-    },
-    {
-      "name": "Viv Richards",
-      "imagePath": "richards",
-      "hints": [
-        "Master Blaster of 1970s-80s",
-        "Feared by pace attacks",
-        "1979 World Cup winner",
-        "Swagger and dominance"
-      ]
-    },
-    {
-      "name": "Clive Lloyd",
-      "imagePath": "lloyd",
-      "hints": [
-        "Captain of dominant WI (1970s-80s)",
-        "1975 & 1979 WC titles",
-        "Middle-order powerhouse",
-        "Tall leader with glasses"
-      ]
-    },
-    {
-      "name": "Desmond Haynes",
-      "imagePath": "haynes",
-      "hints": [
-        "Opening partner to Greenidge",
-        "8,000+ ODI runs",
-        "Consistent across a decade",
-        "Barbados legend"
-      ]
-    },
-    {
-      "name": "Gordon Greenidge",
-      "imagePath": "greenidge",
-      "hints": [
-        "Fearsome WI opener",
-        "Double hundreds in Tests",
-        "Two-time World Cup winner",
-        "Brutal pulls and cuts"
-      ]
-    },
-    {
-      "name": "Andy Roberts",
-      "imagePath": "roberts",
-      "hints": [
-        "Pioneer of WI pace battery",
-        "Varied bouncers deception",
-        "202 Test wickets",
-        "Two-time World Cup winner"
       ]
     },
     {
@@ -1262,4 +1142,3 @@
     }
   ]
 }
-
