@@ -2,7 +2,6 @@ package com.zmq.guessthename;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
@@ -30,6 +29,17 @@ public class MainActivity extends AppCompatActivity {
     private final ArraySet<Character> guessLetters = new ArraySet<>();
     private TextWatcher textWatcher;
     private EditText editText;
+
+    int score = 0;
+
+    public void updateScore(int lives) {
+        if (lives < 4 ) {
+            score += (lives * 5);
+        }
+        else {
+            score += 20;
+        }
+    }
 
     @SuppressLint("SetTextI18n")
     private void showGameOverDialog(Bitmap full, String chosenPlayer, String color) {
@@ -62,6 +72,9 @@ public class MainActivity extends AppCompatActivity {
             resultText.setText("You Lose!");
             resultText.setTextColor(Color.parseColor("#FA2D1E"));
         }
+
+        TextView Score = dialog.findViewById(R.id.score);
+        Score.setText("Your max score: " + score);
 
         ImageView overImage = dialog.findViewById(R.id.overImage);
         overImage.setImageBitmap(full);
@@ -113,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
                 if (lives <= 0 && !isPlayerWon){
                     editText.removeTextChangedListener(textWatcher);
                     showGameOverDialog(full, chosenPlayer, "red");
+                    score = 0;
                 } else {
                     Toast.makeText(MainActivity.this, "Time’s up! You lost 1 life.", Toast.LENGTH_SHORT).show();
                     TextView live = findViewById(R.id.lives);
@@ -130,6 +144,10 @@ public class MainActivity extends AppCompatActivity {
         guessLetters.clear();
         editText.removeTextChangedListener(textWatcher);
         isPlayerWon = false;
+
+//        score
+        TextView textView = findViewById(R.id.score);
+        textView.setText("Score: " + score);
 
 //       Display lives
         String livesString = "Lives: " + "❤️".repeat(Math.max(0, lives));
@@ -150,6 +168,8 @@ public class MainActivity extends AppCompatActivity {
                 hiddenWord.append(" ");
             }
         }
+
+        editText.setEms(chosenPlayer.length()-2);
 
         TextView playerTextView = findViewById(R.id.playerTextView);
         playerTextView.setText(hiddenWord);
@@ -239,6 +259,7 @@ public class MainActivity extends AppCompatActivity {
                                     live.setText("Lives: " + "❤️".repeat(0));
                                     editText.removeTextChangedListener(textWatcher);
                                     showGameOverDialog(full, chosenPlayer, "red");
+                                    score = 0;
                                     editText.setText("");
                                     return;
                                 }
@@ -257,6 +278,7 @@ public class MainActivity extends AppCompatActivity {
                                 guessTimer.cancel();
                             }
                             editText.removeTextChangedListener(textWatcher);
+                            updateScore(lives);
                             showGameOverDialog(full, chosenPlayer, "green");
                         }
 //                       Update UI
@@ -274,11 +296,11 @@ public class MainActivity extends AppCompatActivity {
         editText.addTextChangedListener(textWatcher);
     }
 
-//   Max wrong guess
+    //   Max wrong guess
     int lives = 4;
     Bitmap[] cropped_pieces = new Bitmap[9];
 
-//    Image grid
+    //    Image grid
     private final ImageView[] ImageViews = new ImageView[9];
 
     @SuppressLint({"MissingInflatedId", "SetTextI18n"})
