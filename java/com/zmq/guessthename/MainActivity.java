@@ -169,7 +169,8 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        editText.setEms(chosenPlayer.length());
+        int minusEms = (int) (chosenPlayer.length() * 0.2);
+        editText.setEms(chosenPlayer.length() - minusEms);
 
         TextView playerTextView = findViewById(R.id.playerTextView);
         playerTextView.setText(hiddenWord);
