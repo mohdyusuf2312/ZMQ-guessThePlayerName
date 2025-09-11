@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="15dp"
         android:orientation="vertical"
         android:padding="10dp">
 
@@ -20,10 +20,23 @@
             android:text="@string/heading"
             android:textSize="28sp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="10dp"
             android:textColor="@color/blue"
             android:textStyle="bold"
             android:contentDescription="@string/heading">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/score"
+            android:textColor="@color/blue"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:layout_gravity="start"
+            android:layout_marginStart="50dp"
+            android:textSize="16sp"
+            tools:ignore="InefficientWeight">
         </TextView>
 
         <LinearLayout
@@ -182,31 +195,36 @@
             android:contentDescription="@string/hint">
         </TextView>
 
-        <TextView
-            android:id="@+id/playerTextView"
+        <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:textSize="20sp"
-            android:letterSpacing="0.2"
-            android:contentDescription="@string/chosenPlayer">
-        </TextView>
+            android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/guessChar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:layout_gravity="center_horizontal"
-            android:hint="@string/guessChar"
-            android:layout_margin="10dp"
-            android:importantForAutofill="no"
-            android:inputType="textCapCharacters"
-            android:maxLength="1"
-            android:gravity="center"
-            android:contentDescription="@string/enterLetter"
-            tools:ignore="contentDescription">
-        </EditText>
+
+            <TextView
+                android:id="@+id/playerTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textSize="20sp"
+                android:letterSpacing="0.2"
+                android:contentDescription="@string/chosenPlayer">
+            </TextView>
+
+            <EditText
+                android:id="@+id/guessChar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:layout_gravity="center_horizontal"
+                android:importantForAutofill="no"
+                android:maxLength="1"
+                android:gravity="center"
+                android:background="@null"
+                android:cursorVisible="false"
+                tools:ignore="contentDescription">
+            </EditText>
+
+        </RelativeLayout>
 
     </LinearLayout>
 
