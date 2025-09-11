@@ -56,6 +56,10 @@ public class PlayersList {
         return bitmap;
     }
 
+//    loadJson() {
+//        return loadJson(context);
+//    }
+
     public String loadJson(Context context) {
         String json = null;
         try {
