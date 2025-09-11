@@ -197,7 +197,8 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:gravity="center">
 
             <TextView
                 android:id="@+id/playerTextView"
@@ -205,7 +206,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:textSize="20sp"
-                android:letterSpacing="0.2"
+                android:letterSpacing="0.3"
                 android:paddingStart="10dp"
                 android:contentDescription="@string/chosenPlayer"
                 tools:ignore="RtlHardcoded,RtlSymmetry">
